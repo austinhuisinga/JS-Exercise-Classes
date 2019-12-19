@@ -118,6 +118,9 @@ class Lambdasian {
   speak(){
     return `Hello my name is ${this.name}, I am from ${this.location}`
   }
+  tweakGrade(){
+    return Math.floor(Math.random() * 100) - 10; //limited the tweaking to ten. Any more random grade tweaking would be downright cruel!
+  }
 }
 
 /*
@@ -170,6 +173,7 @@ class Student extends Lambdasian{
       this.previousBackground = object.previousBackground;
       this.className = object.className;
       this.favSubjects = object.favSubjects;
+      this.grade = Math.floor(Math.random() * 100);
   }
   listSubjects() {
     return this.favSubjects;
@@ -179,6 +183,11 @@ class Student extends Lambdasian{
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`;
+  }
+  graduate() {
+    if (this.grade > 70) {
+      return `${this.name} has graduated!`;
+    }
   }
 }
 
